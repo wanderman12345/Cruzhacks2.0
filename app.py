@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, url_for, request, render_template, Blueprint, redirect
+from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
@@ -20,12 +20,12 @@ def search():
             if df["Product"][i] == query:
                 print(i)
                 index = i
-    
+
         if index == -1:
             results = "Item not found"
         else:
             results = df["Impact"][index]
-        
+
         return render_template("index.html", query=query, results=results)
 
     else:
