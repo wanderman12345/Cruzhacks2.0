@@ -36,11 +36,26 @@
                             CO2 emissions of the item.
                         </p>
                     </div>
-                    <img class="img-fluid w-25" src="/imgs/Showcase.svg" alt="">
+                    <img class="img-fluid w-25" src="/static/Showcase.svg" alt="">
                 </div>
             </div>
         </section>
     </div>
+    <section class="bg-success text-light p-5">
+        <div class="container">
+            <div class="d-md-flex  align-items-md-center justify-content-around">
+                <h3 cform action="/search- method post class = 3 mb-md-0">What's my footprint?<h3></h3>
+                    <div class="input-group news-input">
+                        <input type="text" class="form-control" placeholder="Search item"
+                            aria-label="Recipient's username" aria-describedby="button-addon2" name="query">
+                        <button class="btn btn-dark btn-lg" type="button" id="button-addon2">Search</button>
+                    </div>
+            </div>
+            {% if query %}
+                <h1>Carbon footprint of {{query}}: {{results}} kg of C02</h1>
+            {% endif %}
+        </div>
+    </section>
 
 </div>
 
